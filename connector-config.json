@@ -1,0 +1,16 @@
+{
+  "name": "dynamodb-cdc-source",
+  "config": {
+    "connector.class": "io.confluent.connect.aws.dynamodb.DynamoDbSourceConnector",
+    "tasks.max": "1",
+    "aws.region": "us-west-2",
+    "aws.access.key.id": "dummy",
+    "aws.secret.access.key": "dummy",
+    "aws.dynamodb.endpoint": "http://dynamodb:8000",
+    "dynamodb.tables": "TestTable",
+    "mode": "SNAPSHOT_CDC",
+    "kafka.topic": "dynamodb.cdc",
+    "confluent.topic.bootstrap.servers": "broker:9092",
+    "confluent.topic.replication.factor": 1
+  }
+}
